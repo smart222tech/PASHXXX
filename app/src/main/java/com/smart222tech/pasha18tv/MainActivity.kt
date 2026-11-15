@@ -217,6 +217,9 @@ private fun PashxxxApp() {
                     Spacer(Modifier.height(18.dp))
                     NavItem("⌂", tr(language, "Главная", "Home"), tab == Tab.HOME, onMoveRight = { menuVisible = false }) { tab = Tab.HOME; selectedCategory = ""; menuVisible = false; loadCatalog("", 1) }
                     NavItem("♡", tr(language, "Избранное", "Favorites"), tab == Tab.FAVORITES, onMoveRight = { menuVisible = false }) { tab = Tab.FAVORITES; menuVisible = false }
+                    NavItem("◎", tr(language, "Браузер", "Browser"), false, onMoveRight = { menuVisible = false }) {
+                        context.startActivity(Intent(context, TvBrowserActivity::class.java))
+                    }
                     Spacer(Modifier.weight(1f))
                     NavItem("⚙", tr(language, "Настройки", "Settings"), tab == Tab.SETTINGS, onMoveRight = { menuVisible = false }) { tab = Tab.SETTINGS; menuVisible = false }
                     Text("18+  •  PASHXXX", color = Muted, fontSize = 10.sp)
